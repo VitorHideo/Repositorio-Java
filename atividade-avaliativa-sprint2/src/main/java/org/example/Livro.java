@@ -1,13 +1,25 @@
 package org.example;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Livro {
+
+    @JsonProperty("id")
     private int id;
+    @JsonProperty("name")
     private String nome;
+    @JsonProperty("author")
     private String autor;
     private String dataPublicacao;
+    @JsonProperty("publisher")
     private String editora;
+    @JsonProperty("price")
     private double preco;
     private double precoDesconto;
+    @JsonProperty("rating")
     private double nota;
 
     public Livro() {

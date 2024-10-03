@@ -1,22 +1,27 @@
 package org.example;
 
+import java.io.*;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 
 public class TransferenciaDeDados {
 
     public static void main(String[] args) {
 
-        // Ler arquivo livros.json
         FileInputStream inputStream = null;
         try {
             inputStream = new FileInputStream("livros.json");
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não encontrado!");
-            // Para a execução do programa
             throw new RuntimeException(e);
         }
 
